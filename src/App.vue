@@ -1,10 +1,16 @@
 <template>
+  <div class="grid place-items-center h-screen bg-gray-900">
+    <div class="block sm:flex sm:space-x-5">
 
-  <ControlCard/>
+      <ControlCard class="h-full mx-auto my-5 sm:my-0"/>
+      <ActivityCard/>
 
+    </div>
+  </div>
 </template>
 
-<script script>
+<script setup>
 import ControlCard from "./components/ControlCard.vue";
+import ActivityCard from "./components/ActivityCard.vue";
 
 </script>
