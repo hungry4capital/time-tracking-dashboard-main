@@ -1,5 +1,4 @@
 <script setup>
-import data from '../data/data.json'
 import { useStore } from 'vuex'
 import WorkIcon from './ActivityIcons/WorkIcon.vue';
 import ExerciseIcon from './ActivityIcons/ExerciseIcon.vue';
@@ -78,9 +77,17 @@ const newData = store.state.data
 
                 </div>
             </div>
-            <div class="space-y-3 text-left">
+            <div v-if="store.state.activeState.daily" class="space-y-3 text-left">
+                <p class="text-5xl tracking-wide">{{ activity.timeframes.daily.current }}<span class="text-4xl">hrs</span></p>
+                <p class="text-gray-400 text-xs">Yesterday - {{ activity.timeframes.daily.previous }}hrs</p>
+            </div>
+            <div v-if="store.state.activeState.weekly" class="space-y-3 text-left">
                 <p class="text-5xl tracking-wide">{{ activity.timeframes.weekly.current }}<span class="text-4xl">hrs</span></p>
                 <p class="text-gray-400 text-xs">Last Week - {{ activity.timeframes.weekly.previous }}hrs</p>
+            </div>
+            <div v-if="store.state.activeState.monthly" class="space-y-3 text-left">
+                <p class="text-5xl tracking-wide">{{ activity.timeframes.monthly.current }}<span class="text-4xl">hrs</span></p>
+                <p class="text-gray-400 text-xs">Last Month - {{ activity.timeframes.monthly.previous }}hrs</p>
             </div>
         </button>
     </div>

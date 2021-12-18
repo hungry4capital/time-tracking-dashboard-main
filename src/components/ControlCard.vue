@@ -1,5 +1,22 @@
 <script setup>
-import data from '../data/data.json'
+import { useStore } from 'vuex';
+
+    const store = useStore()
+
+    const getViews = Object.keys(store.state.activeState)
+
+
+    const selectTimeFrame = (selectedView) => {
+        getViews.forEach(function(view){
+            if(view == selectedView){
+                store.state.activeState[selectedView] = true
+            } 
+            if(view !== selectedView){
+                store.state.activeState[view] = false
+            }
+        })
+
+    }
 
 </script>
 
@@ -19,9 +36,9 @@ import data from '../data/data.json'
         </div>
         <div>
             <div class="grid place-items-left content-center bg-gray-800 text-gray-600 py-8 sm:pl-4 rounded-b-xl space-y-2 font-semibold tracking-wide w-72 sm:w-0 text-center sm:text-left">
-                <button class="hover:text-gray-50 text-left">Daily</button>
-                <button class="hover:text-gray-50 text-left">Weekly</button>
-                <button class="hover:text-gray-50 text-left">Monthly</button>
+                <button @click="selectTimeFrame('daily')" :class="`${store.state.activeState['daily'] ? 'text-white' : 'text-gray-600'}`" class="hover:text-gray-50 text-center sm:text-left">Daily</button>
+                <button @click="selectTimeFrame('weekly')" :class="`${store.state.activeState['weekly'] ? 'text-white' : 'text-gray-600'}`"  class="hover:text-gray-50 text-center sm:text-left">Weekly</button>
+                <button @click="selectTimeFrame('monthly')" :class="`${store.state.activeState['monthly'] ? 'text-white' : 'text-gray-600'}`"  class="hover:text-gray-50 text-center sm:text-left">Monthly</button>
             </div>
         </div>
     
