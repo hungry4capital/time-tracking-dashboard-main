@@ -1,5 +1,5 @@
 <template>
-  <div class="grid place-items-center h-screen bg-gray-900">
+  <div class="grid place-items-center sm:h-screen bg-gray-900">
     <div class="block sm:flex sm:space-x-5">
 
       <ControlCard class="h-full mx-auto my-5 sm:my-0"/>

@@ -18,10 +18,10 @@ import data from '../data/data.json'
             </div>
         </div>
         <div>
-            <div class="grid place-items-left content-center bg-gray-800 text-white py-8 sm:pl-4 rounded-b-xl space-y-2 font-semibold tracking-wide w-72 sm:w-0 text-center sm:text-left">
-                <p>Daily</p>
-                <p>Weekly</p>
-                <p>Monthly</p>
+            <div class="grid place-items-left content-center bg-gray-800 text-gray-600 py-8 sm:pl-4 rounded-b-xl space-y-2 font-semibold tracking-wide w-72 sm:w-0 text-center sm:text-left">
+                <button class="hover:text-gray-50 text-left">Daily</button>
+                <button class="hover:text-gray-50 text-left">Weekly</button>
+                <button class="hover:text-gray-50 text-left">Monthly</button>
             </div>
         </div>
     
